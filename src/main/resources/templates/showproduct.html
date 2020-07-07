@@ -104,53 +104,26 @@
 							<h2>Product List</h2>
 							<table class="table table-striped" style="table-layout: fixed; width: 100%">
 								<tr>
-									<th>id</th>
-									<th>Date</th>
-									<th>Bill</th>
-									<th >Party</th>
-									<th>GstNo</th>
-									<th>Qnty</th>
-									<th>Rate</th>
-									<th>Amount</th>
-									<th>Received</th>
-									<th>Gst</th>
-									<th>Bill Amount</th>
-									<th>Claim</th>
-									<th>Debit Note</th>
-									<th>CGST</th>
-									<th>SGST</th>
-									<th>Final GST</th>
-									<th>Difference</th>
-									<th>Bag</th>
-									<th>Broker</th>
-									<th>View</th>
-									<th>Edit</th>
-									<th>Delete</th>
+									<th>productName</th>
+									<th>productPrice</th>
+									<th>mrp</th>
+									<th >sellingPrice</th>
+									<th>quantity</th>
+									<th>createdAt</th>
+									<th>updatedAt</th>
 								</tr>
 								<tr  >
 									<td th:text="${product.id}"><a
 										href="/product/${product.id}"></a></td>
-									<td th:text="${product.date}"><a
+									<td th:text="${product.productName}"><a
 										href="/product/${product.id}"></a></td>
-									<td th:text="${product.bill}"></td>
-									<td style="word-wrap: break-word" th:text="${product.party}"></td>
-									<td th:text="${product.gstNo}"></td>
-									<td th:text="${product.qnty}"></td>
-									<td th:text="${product.rate}"></td>
-									<td th:text="${product.amount}"></td>
-									<td th:text="${product.received}"></td>
-									<td th:text="${product.gst}"></td>
-									<td th:text="${product.billamt}"></td>
-									<td th:text="${product.claim}"></td>
-									<td th:text="${product.debitNote}"></td>
-									<td th:text="${product.cgst}"></td>
-									<td th:text="${product.sgst}"></td>
-									<td th:text="${product.fgst}"></td>
+									<td th:text="${product.mrp}"></td>
 									
+									<td th:text="${product.sellingPrice}"></td>
+									<td th:text="${product.quantity}"></td>
+									<td th:text="${product.createdAt}"></td>
+									<td th:text="${product.updatedAt}"></td>
 									
-									<td th:text="${product.difference}"></td>
-									<td th:text="${product.bag}"></td>
-									<td th:text="${product.broker}"></td>
 									<td><a th:href="${ '/product/' + product.id}">View</a></td>
 									<td><a th:href="${'/product/edit/' + product.id}">Edit</a></td>
 									<td><a th:href="${'/product/delete/' + product.id}" onclick="return confirm('Are You sure you want to delete')">Delete</a></td>

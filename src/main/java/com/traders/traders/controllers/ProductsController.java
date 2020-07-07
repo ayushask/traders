@@ -10,22 +10,31 @@ import java.util.List;
 @RestController
 
 public class ProductsController {
-    @Autowired
-    ProductsService productService;
+	@Autowired
+	ProductsService productService;
 
-    @GetMapping("/getallproducts")
-    public List<Products> getAllProducts() {
-       return  productService.getAllProducts();
-    }
+	@GetMapping("/getallproducts")
+	public List<Products> getAllProducts() {
+		return productService.getAllProducts();
+	}
 
-    @GetMapping("/getproductbyid/{id}")
-    public Products getProductById(@PathVariable(value = "id") Long productId) {
-        return  productService.getProductById(productId);
-    }
+	@GetMapping("/getproductbyid/{id}")
+	public Products getProductById(@PathVariable(value = "id") Long productId) {
+		return productService.getProductById(productId);
+	}
 
-    @PutMapping("/updateproductbyid/{id}")
-    public Products updateProductById(@PathVariable(value = "id") Long productId,
-                                      @RequestBody Products products) {
-        return  productService.updateProductById(productId,products);
-    }
+	@PutMapping("/updateproductbyid/{id}")
+	public Products updateProductById(@PathVariable(value = "id") Long productId, @RequestBody Products products) {
+		return productService.updateProductById(productId, products);
+	}
+
+	@GetMapping("/deleteproductbyid/{id}")
+	public void deleteProductById(@PathVariable(value = "id") Long productId) {
+		productService.deleteProductById(productId);
+	}
+
+	@PostMapping("/addproduct")
+	public void saveProduct( @RequestBody Products products) {
+		productService.addProduct(products);
+	}
 }

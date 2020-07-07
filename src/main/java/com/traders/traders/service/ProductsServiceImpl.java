@@ -48,4 +48,17 @@ public class ProductsServiceImpl implements ProductsService {
         Products updateproduct = productsRepository.save(pNew);
         return  updateproduct;
     }
+
+	@Override
+	public void deleteProductById(Long productId) {
+		 Optional<Products> product = productsRepository.findById(productId);
+	       
+	         productsRepository.delete(product.get());
+	     
+	}
+
+	@Override
+	public Products addProduct(Products products) {
+		 return productsRepository.save(products);
+	}
 }

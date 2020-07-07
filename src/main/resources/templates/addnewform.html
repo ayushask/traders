@@ -106,7 +106,7 @@
 			<div id="fh5co-contact">
 				<div class="row animate-box">
 					<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-						<h2>Create Sale Entry for <a th:object="${product}" th:field="*{gene.name}"> </h2>
+						<!-- <h2>Create Sale Entry for <a th:object="${product}" th:field="*{gene.name}"> </h2> -->
 						<p>Far far away, behind the word mountains, far from the
 							countries Vokalia and Consonantia.</p>
 					</div>
@@ -115,120 +115,46 @@
 
 					<form class="form-horizontal" th:object="${product}"
 						th:action="@{/product}" method="post">
-						<input type="hidden" th:field="*{id}" /> <input type="hidden"
-							th:field="*{version}" />
-						<input type="hidden" th:field="*{gene.name}" id="geneName"/>
+						
+						<!-- <input type="hidden" th:field="*{gene.name}" id="geneName"/>
 						<input type="hidden" th:field="*{gene.tax}" id="geneTax" /> 
-						<input type="hidden" th:field="*{gene.id}" id="geneId" /> 
+						<input type="hidden" th:field="*{gene.id}" id="geneId" />  -->
 						<div class="col-md-6 col-md-offset-3 text-cente animate-box">
 							<div class="row">
-								<div class="col-md-12">
+							
+								<div class="col-md-6">
 									<div class="form-group">
-										Date:<input type="text" id="datepicker" class="form-control"
-											placeholder="date" th:field="*{date}">
+										Product Name<input type="text" class="form-control"
+											placeholder="productName" th:field="*{productName}">
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										Bill Number:<input type="text" class="form-control"
-											placeholder="bill" th:field="*{bill}">
+										Product Price<input type="number" class="form-control"
+											placeholder="productPrice" th:field="*{productPrice}" step="any">
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										Party Name:<input type="text" class="form-control"
-											placeholder="party" th:field="*{party}">
+										MRP:<input type="number" class="form-control" id="mrp"
+											placeholder="0" th:field="*{mrp}" step="any">
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										Gst No:<input type="text" class="form-control"
-											placeholder="gstNo" th:field="*{gstNo}">
+										<b>Selling Price:<input type="number" class="form-control"
+											id="sprice" placeholder="0" th:field="*{sellingPrice}" step="any"></b>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										Quantity:<input type="number" class="form-control"
-											id="anfQuantity" placeholder="0" th:field="*{qnty}" step="any">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										Rate:<input type="number" class="form-control" id="anfRate"
-											placeholder="0" th:field="*{rate}" step="any">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<b>Amount:<input type="number" class="form-control"
-											id="anfAmount" placeholder="0" th:field="*{amount}" readonly step="any"></b>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<b>GST:<input type="number" class="form-control"
-											id="anfGst" placeholder="0" th:field="*{gst}"  readonly></b>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<b>Bill Amount:<input type="number" class="form-control"
-											id="anfBillAmt" placeholder="0" th:field="*{billamt}" readonly step="any"></b>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<b>Received:<input type="number" class="form-control"
-											id="anfReceived" placeholder="0"
-											th:field="*{received}" value="0" step="any"></b>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<b>Claim:<input type="number" class="form-control"
-											id="anfClaim" placeholder="0"
-											th:field="*{claim}" step="any"></b>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<b>Debit Note:<input type="number" class="form-control"
-											id="anfDebitNote" placeholder="0"
-											th:field="*{debitNote}" value="0" step="any"></b>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<b>CGST<input type="number" class="form-control"
-											id="anfCGST" placeholder="0"
-											th:field="*{cgst}" value="0" step="any"></b>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<b>SGST:<input type="number" class="form-control"
-											id="anfSGST" placeholder="0"
-											th:field="*{sgst}" value="0" step="any"></b>
-									</div>
-								</div>
-									<div class="col-md-6">
-									<div class="form-group">
-										<b>Final GST:<input type="number" class="form-control"
-											id="anfFGST" placeholder="0"
-											th:field="*{fgst}" value="0" step="any"></b>
-									</div>
-								</div>
-								
-								<div class="col-md-12">
-									<div class="form-group">
-										<b>Difference:<input type="number" class="form-control"
-											id="anfDifference" placeholder="0"
-											th:field="*{difference}" step="any"></b>
+										<b>Quantity:<input type="number" class="form-control"
+											id="qnty" placeholder="0" th:field="*{quantity}" step="any" ></b>
 									</div>
 								</div>
 								<div class="col-md-12">
 									<div class="form-group">
-										<input type="submit" value="Send Message"
+										<input type="submit" value="Save"
 											class="btn btn-primary btn-modify">
 									</div>
 								</div>
