@@ -13,9 +13,16 @@ public class ProductsController {
 	@Autowired
 	ProductsService productService;
 
+	@GetMapping("/getallproductsbyName")
+	public List<Products> getAllProductsbyName(@RequestParam(value = "term",required = false) String query) {
+		System.out.println("getAllProductsbyName");
+		return productService.getAllProducts(query);
+	}
+	
 	@GetMapping("/getallproducts")
 	public List<Products> getAllProducts() {
-		return productService.getAllProducts();
+		System.out.println("getAllProducts");
+		return productService.getAllProducts(null);
 	}
 
 	@GetMapping("/getproductbyid/{id}")

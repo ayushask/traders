@@ -19,8 +19,20 @@ public class ProductsServiceImpl implements ProductsService {
     }
 
     @Override
-    public List<Products> getAllProducts() {
-        return productsRepository.findAll();
+    public List<Products> getAllProducts(String query) {
+    	System.out.println("getAllProducts "+ query);
+    	List<Products>  product = null;
+    	if(query == null){
+    		System.out.println(query);
+        	product = productsRepository.findAll();
+        	System.out.println(product);
+        	return product;
+    	}else {
+    		query = query + '%';
+    		product =  productsRepository.findByProductName(query);
+    		 System.out.println(product);
+         	return product;
+    	}
     }
 
     @Override

@@ -24,9 +24,7 @@
 <meta name="twitter:image" content="" />
 <meta name="twitter:url" content="" />
 <meta name="twitter:card" content="" />
-<link
-	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"
-	rel="Stylesheet" type="text/css" />
+
 <link
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700"
 	rel="stylesheet">
@@ -47,8 +45,6 @@
 <!-- Flexslider  -->
 <link rel="stylesheet" href="/css/flexslider.css">
 
-<link rel="stylesheet" href="/css/foopicker.css">
-
 <!-- Owl Carousel  -->
 <link rel="stylesheet" href="/css/owl.carousel.min.css">
 <link rel="stylesheet" href="/css/owl.theme.default.min.css">
@@ -58,21 +54,17 @@
 
 <!-- Modernizr JS -->
 <script src="/js/modernizr-2.6.2.min.js"></script>
-<script src="/js/foopicker.js"></script>
-
 <!-- FOR IE9 below -->
 <!--[if lt IE 9]>
 	<script src="/js/respond.min.js"></script>
 	<![endif]-->
-
-
-
 <link rel="stylesheet" href="/css/select2.css"/>
 
 </head>
 <body>
 
 	<div class="fh5co-loader"></div>
+
 	<div id="page">
 		<nav class="fh5co-nav" role="navigation">
 		<div class="container-wrap">
@@ -105,74 +97,27 @@
 			</div>
 		</div>
 	</nav>
-		<div class="container-wrap">
-
+		<div id="fh5co-counter" class="fh5co-counters fh5co-light-grey">
 			<div id="fh5co-contact">
 				<div class="row animate-box">
-					<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-						<!-- <h2>Create Sale Entry for <a th:object="${product}" th:field="*{gene.name}"> </h2> -->
-						<p>Far far away, behind the word mountains, far from the
-							countries Vokalia and Consonantia.</p>
-					</div>
-				</div>
-				<div class="row">
-
-					<form class="form-horizontal" th:object="${product}"
-						th:action="@{/product}" method="post">
+					<div class=" text-center fh5co-heading">
 						
-						<!-- <input type="hidden" th:field="*{gene.name}" id="geneName"/>
-						<input type="hidden" th:field="*{gene.tax}" id="geneTax" /> 
-						<input type="hidden" th:field="*{gene.id}" id="geneId" />  -->
-						<div class="col-md-6 col-md-offset-3 text-cente animate-box">
-							<div class="row">
-							
-								<div class="col-md-6">
-									<div class="form-group">
-										Product Name<input type="text" class="form-control"
-											placeholder="productName" th:field="*{productName}">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										Product Price<input type="number" class="form-control"
-											placeholder="productPrice" th:field="*{productPrice}" step="any">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										MRP:<input type="number" class="form-control" id="mrp"
-											placeholder="0" th:field="*{mrp}" step="any">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<b>Selling Price:<input type="number" class="form-control"
-											id="sprice" placeholder="0" th:field="*{sellingPrice}" step="any"></b>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<b>Quantity:<input type="number" class="form-control"
-											id="qnty" placeholder="0" th:field="*{quantity}" step="any" ></b>
-									</div>
-								</div>
-								<div class="col-md-12">
-									<div class="form-group">
-										<input type="submit" value="Save"
-											class="btn btn-primary btn-modify">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										Search: <select  id="product_auto" class="form-control select2-single" th:field="*{productName}">
-					                       
-					                    </select>
-									</div>
-								</div>
-							</div>
-						</div>
-
-					</form>
+							<h2>Products List</h2>
+							<table class="table table-striped" style="table-layout: fixed; width: 100%" id="myTable">
+								<tr>
+									<th>productName</th>
+									<th>mrp</th>
+									<th>productPrice</th>
+									<th >rate</th>
+									<th>quantity</th>
+									<th>sellingPrice</th>									
+								</tr>
+								<tr></tr>
+								
+							</table>
+								<input type="button" id= "add_new_row"/ value= "Add new Row">
+						
+					</div>
 				</div>
 			</div>
 			<div id="fh5co-counter" class="fh5co-counters fh5co-light-grey">
@@ -271,28 +216,9 @@
 	<script src="/js/jquery.countTo.js"></script>
 	<!-- Main -->
 	<script src="/js/main.js"></script>
-	<script type="text/javascript">
-		var foopicker = new FooPicker(
-				{
-					id : 'datepicker',
-					dateFormat : 'dd/MM/yyyy',
-					disable : [ '29/07/2017', '30/07/2017', '31/07/2017',
-							'01/08/2017' ]
-				});
-		var foopicker2 = new FooPicker({
-			id : 'datepicker2'
-		});
-	</script>
 	<script src="/js/select2.js"></script>
 	<script src="/js/mine.js"></script>
-	<script>
-
-   
-   
-
-</script>
 
 </body>
-
 </html>
 

@@ -1,26 +1,23 @@
-//package com.traders.traders.controllers;
-//
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Controller;
-//import org.springframework.ui.Model;
-//import org.springframework.web.bind.annotation.PathVariable;
-//import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RequestMethod;
-//import org.springframework.web.bind.annotation.RequestParam;
-//
-//import com.traders.traders.dto.Genes;
-//import com.traders.traders.dto.Purchase;
-//import com.traders.traders.service.GeneService;
-//import com.traders.traders.service.PurchaseService;
-//
-//@Controller
-//public class PurchaseController {
-//
-//	@Autowired
-//	PurchaseService purchaseService;
-//
-//	@Autowired
-//	GeneService geneService;
+package com.traders.traders.controllers;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.traders.traders.dto.Products;
+
+
+
+@Controller
+public class PurchaseController {
+
+
 //
 //	@RequestMapping(value = "/purchase", method = RequestMethod.GET)
 //	public String list(Model model) {
@@ -47,22 +44,19 @@
 //		model.addAttribute("purchase", purchaseService.getPurchaseBuId(id));
 //		return "addnewpurchase";
 //	}
-//
-////	@RequestMapping("product/new")
-////	public String newProduct(Model model) {
-////		model.addAttribute("product", new Product());
-////		return "addnewform";
-////	}
-//
-//	@RequestMapping("purchase/new")
-//	public String newEntry(Model model,@RequestParam("geneid") Integer geneId) {
-//		Purchase purchase= new Purchase();
-//		Genes gene = geneService.getGenesById(geneId);
-//		purchase.setGene(gene);
-//		model.addAttribute("purchase", purchase);
-//		return "addnewpurchase";
+
+//	@RequestMapping("product/new")
+//	public String newProduct(Model model) {
+//		model.addAttribute("product", new Product());
+//		return "addnewform";
 //	}
-//
+
+	@RequestMapping("purchase/new")
+	public String newEntry(Model model) {
+		model.addAttribute("purchaseEntry", new ArrayList<Products>());
+		return "order";
+	}
+
 //	@RequestMapping(value = "purchase", method = RequestMethod.POST)
 //	public String save(Purchase purchase) {
 //
@@ -70,7 +64,7 @@
 //
 //		return "redirect:/purchase/" + purchase.getId();
 //	}
-//
-//
-//
-//}
+
+
+
+}

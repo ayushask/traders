@@ -403,3 +403,4 @@ var foopicker = new FooPicker({
     id: 'datepicker',
     dateFormat: 'yyyy-MM-dd'
 });
+
